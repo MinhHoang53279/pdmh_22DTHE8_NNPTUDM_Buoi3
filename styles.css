@@ -1,0 +1,187 @@
+/* ===== PHẦN STYLE CHO BẢNG ===== */
+
+/* Bảng chiếm toàn bộ chiều rộng, viền gộp lại */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header của bảng - màu xám đậm */
+.product-table th {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #222;
+}
+
+/* Hàng lẻ (1, 3, 5...) - màu đen */
+.product-table tbody tr:nth-child(odd) {
+    background-color: #000;
+    color: white;
+}
+
+/* Hàng chẵn (2, 4, 6...) - màu trắng */
+.product-table tbody tr:nth-child(even) {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Ô trong bảng */
+.product-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+/* Khi hover chuột qua hàng */
+.product-table tbody tr:hover {
+    opacity: 0.9;
+}
+
+/* Container chứa tất cả hình ảnh sản phẩm */
+.product-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+/* Mỗi hình ảnh sản phẩm - hiển thị toàn bộ */
+.product-images img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid #ddd;
+}
+
+/* Loading khi đang tải dữ liệu */
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+}
+
+/* Thông báo lỗi */
+.error {
+    color: red;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ===== HÀNG CÔNG CỤ: TÌM KIẾM + HIỂN THỊ MỖI TRANG ===== */
+
+/* Hàng chứa tìm kiếm (trái) và hiển thị mỗi trang (phải) */
+.toolbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+/* Khung chứa ô tìm kiếm - bên trái */
+.search-box label {
+    margin-right: 8px;
+}
+
+/* Ô nhập tìm kiếm */
+.search-box input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 250px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+/* Nút sắp xếp theo giá và tên */
+.sort-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.sort-buttons span {
+    font-weight: 500;
+}
+
+.sort-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sort-btn:hover {
+    background: #f0f0f0;
+}
+
+.sort-btn:active {
+    background: #e0e0e0;
+}
+
+/* Chọn số dòng mỗi trang - bên phải */
+.per-page label {
+    margin-right: 8px;
+}
+
+.per-page select {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ===== PHÂN TRANG ===== */
+
+/* Thông tin phân trang: "Hiển thị 1-10 của 200 sản phẩm" */
+.pagination-info {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Khung chứa nút chuyển trang */
+.pagination-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+/* Nút phân trang */
+.page-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.page-btn.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

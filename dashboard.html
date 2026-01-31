@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Sản phẩm</title>
+    <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Dashboard Sản phẩm</h1>
+    
+    <!-- Hàng chứa tìm kiếm (trái) và hiển thị mỗi trang (phải) -->
+    <div class="toolbar-row">
+        <div class="search-box">
+            <label for="search-input">Tìm theo tên:</label>
+            <input type="text" id="search-input" placeholder="Nhập tên sản phẩm...">
+        </div>
+        <div class="sort-buttons">
+            <span>Sắp xếp:</span>
+            <button type="button" class="sort-btn" data-sort="price-asc">Giá tăng</button>
+            <button type="button" class="sort-btn" data-sort="price-desc">Giá giảm</button>
+            <button type="button" class="sort-btn" data-sort="title-asc">Tên A-Z</button>
+            <button type="button" class="sort-btn" data-sort="title-desc">Tên Z-A</button>
+        </div>
+        <div class="per-page">
+            <label for="per-page-select">Hiển thị mỗi trang:</label>
+            <select id="per-page-select">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Vùng hiển thị loading -->
+    <div id="loading" class="loading">Đang tải dữ liệu...</div>
+    
+    <!-- Vùng hiển thị lỗi -->
+    <div id="error" class="error" style="display: none;"></div>
+    
+    <!-- Bảng hiển thị sản phẩm -->
+    <div id="table-container" style="display: none;">
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Danh mục</th>
+                    <th>Mô tả</th>
+                    <th>Hình ảnh</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Các dòng sản phẩm sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+        
+        <!-- Thanh phân trang: thông tin và nút chuyển trang -->
+        <div class="pagination-info" id="pagination-info"></div>
+        <div class="pagination-buttons" id="pagination-buttons"></div>
+    </div>
+
+    <!-- Liên kết file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
